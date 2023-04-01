@@ -1,0 +1,95 @@
+Lesson 52
+
+2:
+
+CREATE TABLE `product` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `Products` varchar(65) NOT NULL,
+  `Price` int NOT NULL,
+  `Rating` decimal(5,2) NOT NULL,
+  `Category` varchar(45) NOT NULL,
+  `Brand` varchar(45) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `idx_product_Products` (`Products`),
+  KEY `idx_product_Price` (`Price`),
+  KEY `idx_product_Rating` (`Rating`),
+  KEY `idx_product_Category` (`Category`),
+  KEY `idx_product_Brand` (`Brand`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+INSERT INTO `shop`.`product`
+(`Products`,
+`Price`,
+`Rating`,
+`Category`,
+`Brand`)
+
+VALUES
+('iPhone 9',
+549,
+4.69,
+'smartphone',
+'Apple'),
+
+('iPhone X',
+899,
+4.44,
+'smartphone',
+'Apple'),
+
+('Samsung Universe 9',
+1249,
+4.09,
+'smartphone',
+'Samsung'),
+
+('OPPO F 19',
+280,
+4.3,
+'smartphone',
+'OPPO'),
+
+('Huawei P30',
+499,
+4.09,
+'smartphone',
+'Huawei'),
+
+('MacBook Pro',
+1149,
+4.57,
+'laptops',
+'Apple'),
+
+
+('Samsung Galaxe Book',
+1499,
+4.25,
+'laptops',
+'Samsung'),
+
+('Microsoft Surface Laptop 4',
+1499,
+4.43,
+'laptops',
+'Microsoft Surface'),
+
+('Infinix INBOOK',
+1099,
+4.54,
+'laptops',
+'Infinix'),
+
+('HP Pavilion 15-DK1056WM',
+1099,
+4.43,
+'laptops',
+'HP Pavilion');
+
+ 
+3.1:    SELECT Products, Price FROM shop.product WHERE Brand = 'Apple';
+3.2:    SELECT Products FROM shop.product WHERE Price <1000;
+3.3:    SELECT Products FROM shop.product WHERE Price BETWEEN 500 AND 1500;
+3.4:    SELECT Products, Price, Rating FROM shop.product  WHERE Brand IN ('Apple', 'Samsung', 'Huawei');
+3.5:    SELECT Products, Brand FROM shop.product WHERE Products LIKE 'Samsung%' AND Brand LIKE 'Samsung%';
+
